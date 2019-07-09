@@ -1888,10 +1888,10 @@ input, select, textarea {
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
+		-moz-appearance: default;
+		-webkit-appearance: default;
+		-ms-appearance: default;
+		appearance: default;
 		display: block;
 		float: left;
 		margin-right: -2em;
@@ -1929,7 +1929,7 @@ input, select, textarea {
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: rgba(144, 144, 144, 0.25);
+				background: rgba(255, 255, 255, 0.25);
 				border-radius: 3px;
 				content: '';
 				display: inline-block;
