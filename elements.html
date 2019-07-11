@@ -19,6 +19,9 @@
 				<!-- Header -->
 					<header id="header">
 						<h1><a href="index.html">Club Ex</a></h1>
+						<div style="margin-left:70%;margin-right:10%;color:white">
+							<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Search for the classes">
+						</div>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -47,7 +50,7 @@
 									<section class="spotlight" id="yoga">
 										<div class="image"><iframe width="640" height="480"
 											src="https://www.youtube.com/embed/g13nVd7OLYs">
-											</iframe></div><div class="content">
+											</iframe></div><div class="content" id ="yoga1">
 											<h3>Gentle Yoga Flow - 30-Minute All Levels Yoga Class</h3>
 											<p style="color:#ffffff">This is an all levels gentle yoga flow to decompress, destress, and FEEL GOOD. 
 
@@ -61,7 +64,7 @@
 												src="https://www.youtube.com/embed/qy_oIKf1ByM">
 												</iframe></div>
 											<div class="content">
-											<h2>30 Minute Power Yoga Class</h2>
+											<h3>30 Minute Power Yoga Class</h3>
 											<p style="color:#ffffff">This is a thirty minute power yoga class. There are options for modifications throughout, so it's okay for people new to yoga (though I wouldn't say it's appropriate for absolute beginners). This is a vinyasa yoga class. Vinyasa means 'movemen't, so we will be constantly flowing and moving </p>
 										</div>
 									</section>
@@ -112,17 +115,6 @@
 								</section>
 					</article>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-					</footer>
-
 			</div>
 
 		<!-- Scripts -->
@@ -133,6 +125,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var input, filter, section, sectionSearch, b;
+				function myFunction(){
+					input = document.getElementById("mySearch");
+					filter = input.value.toUpperCase();
+					section = document.getElementById("two");
+					sectionSearch = section.getElementsById("yoga");
+
+					// loop through all the section
+					for (i=0; 1<sectionSearch.length; i++){
+						b = sectionSearch[i].getElementsById("yoga1")[0];
+						if (b.innerHTML.toUpperCase().indexOf(filter) > -1){
+							sectionSearch[i].style.display = "";
+						}else{
+							sectionSearch[i].style.display = "";
+						}
+					}
+				}
+			</script>
 
 	</body>
 </html>
