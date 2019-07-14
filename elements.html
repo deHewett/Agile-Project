@@ -6,9 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script>
-		var count = 0;
-		</script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -23,7 +20,7 @@
 					<header id="header">
 						<h1><a href="index.html">Club Ex</a></h1>
 						<div style="margin-left:70%;margin-right:10%;color:white">
-							<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Search for the classes">
+							<input type="text" id="mySearch" onkeyup="searchElements()" placeholder="Search.." title="Search for the classes">
 						</div>
 						<nav id="nav">
 							<ul>
@@ -51,12 +48,13 @@
 						</header>								
 						<section id="two" class="wrapper alt style2">
 									<section class="spotlight" id="yoga">
-										<div class="image"><iframe id="yoga1" width="640" height="480"
-											src="https://www.youtube.com/embed/g13nVd7OLYs">
-											</iframe></div><div class="content" id ="yoga1">
+										<div class="image">
+											<iframe width="640" height="480" src="https://www.youtube.com/embed/g13nVd7OLYs"></iframe>
+										</div>
+										<div class="content">
 											<h3>Gentle Yoga Flow - 30-Minute All Levels Yoga Class</h3>
-											<p style="color:#ffffff">Total Views: 153</p>
-											<p style="color:#ffffff">This is an all levels gentle yoga flow to decompress, destress, and FEEL GOOD. 
+												<p style="color:#ffffff">Total Views: 153</p>
+												<p style="color:#ffffff">This is an all levels gentle yoga flow to decompress, destress, and FEEL GOOD. 
 
 													Gentle yoga is a great way to slow down, connect with your body, and calm your mind. This all levels juicy practice is ideal for anyone new to yoga, but everyone will enjoy this opportunity to move your body, breathe deeply and simply feel good. 
 													
@@ -138,5 +136,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				
+				function searchElements(){
+					var input, filter,mainId,tagId, sectionId;
+					input = document.getElementById("mySearch");
+					filter = input.value.toUpperCase();
+					mainId = document.getElementById("yoga");
+					tagId = mainId.getElementsByTagName("section");
+
+
+					}
+				
+			</script>
 	</body>
 </html>
