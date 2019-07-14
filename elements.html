@@ -52,7 +52,8 @@
 									<section class="spotlight" id="yoga">
 										<div class="image"><iframe id="yoga1" width="640" height="480"
 											src="https://www.youtube.com/embed/g13nVd7OLYs">
-											</iframe></div><div class="content" id ="yoga1">
+											</iframe></div>
+											<div class="content" id ="yoga1">
 											<h3>Gentle Yoga Flow - 30-Minute All Levels Yoga Class</h3>
 											<p style="color:#ffffff">Total Views: 153</p>
 											<p style="color:#ffffff">This is an all levels gentle yoga flow to decompress, destress, and FEEL GOOD. 
@@ -76,7 +77,7 @@
 									</section>
 								</li>
 								<li>
-									<section class="spotlight" id="crossfit">
+									<section class="spotlight" id="yoga">
 											<div class="image"><iframe width="640" height="480"
 												src="https://www.youtube.com/embed/eBvy_A2jTmk">
 												</iframe></div><div class="content">
@@ -87,7 +88,7 @@
 										</section>
 								</li>
 								<li>
-									<section class="spotlight" id="crossfit">
+									<section class="spotlight" id="yoga">
 											<div class="image"><iframe width="640" height="480"
 												src="https://www.youtube.com/embed/NzvBbUozSAY">
 												</iframe></div>
@@ -105,7 +106,7 @@
 									</section>
 									</li>
 									<li>
-										<section class="spotlight" id="spin">
+										<section class="spotlight" id="yoga">
 												<div class="image"><iframe width="640" height="480"
 													src="https://www.youtube.com/embed/4Hl1WAGKjMc">
 													</iframe></div><div class="content">
@@ -116,7 +117,7 @@
 											</section>
 										</li>
 										<li>
-											<section class="spotlight" id="spin">
+											<section class="spotlight" id="yoga">
 													<div class="image"><iframe width="640" height="480"
 														src="https://www.youtube.com/embed/qo9cSpP3eGU">
 														</iframe></div>
@@ -131,8 +132,8 @@
 												</div>
 											</section>
 										</li>
-										</ul>
-								</section>
+							</ul>
+						</section>
 					</article>
 
 				<!-- Footer -->
@@ -152,14 +153,20 @@
 			<script>
 				
 				function searchElements(){
-					var input, filter,mainId,tagId, sectionId;
+					var input, filter, ul, li, a, i;
 					input = document.getElementById("mySearch");
 					filter = input.value.toUpperCase();
-					mainId = document.getElementById("yoga");
-					tagId = mainId.getElementsByTagName("section");
-
-
+					ul = document.getElementById("contentList");
+					li = ul.getElementsByTagName("li");
+					for (i = 0; i < li.length; i++) {
+						a = li[i].getElementsByTagName("section")[0];
+						if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+						} else {
+						li[i].style.display = "";
+						}
 					}
+}
 				
 			</script>
 	</body>
