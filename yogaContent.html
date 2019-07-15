@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+		var count = 0;
+		</script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -20,7 +23,7 @@
 					<header id="header">
 						<h1><a href="index.html">Club Ex</a></h1>
 						<div style="margin-left:70%;margin-right:10%;color:white">
-							<input type="text" id="mySearch" onkeyup="searchElements()" placeholder="Search.." title="Search for the classes">
+							<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Search for the classes">
 						</div>
 						<nav id="nav">
 							<ul>
@@ -41,12 +44,41 @@
 					</header>
 
 				<!-- Main -->
-				<article id="main">
+					<article id="main">
 						<header>
 							<h2>Media Content</h2>
 							<p>For all your instructional gym needs!</p>
 						</header>								
 						<section id="two" class="wrapper alt style2">
+								<ul id="yogaList">
+										<li  id="153">
+												<section class="spotlight">
+													<div class="image"><iframe id="yoga1" width="640" height="480"
+														src="https://www.youtube.com/embed/g13nVd7OLYs">
+														</iframe></div><div class="content" id ="yoga1">
+														<h3>Gentle Yoga Flow - 30-Minute All Levels Yoga Class</h3>
+														<p style="color:#ffffff">Total Views: 153</p>
+														<p style="color:#ffffff">This is an all levels gentle yoga flow to decompress, destress, and FEEL GOOD. 
+			
+																Gentle yoga is a great way to slow down, connect with your body, and calm your mind. This all levels juicy practice is ideal for anyone new to yoga, but everyone will enjoy this opportunity to move your body, breathe deeply and simply feel good. 
+																
+																Move through a series of stretches, yoga poses and guided breathing to increase flexibility and mobility, decompress, and create more physical space in the body. This yoga class is a great way to get familiarized with the poses (and a back-to-the-basics refresher for more experienced students).  </p>
+													</div>
+												</section>
+											</li>
+											<li id="248">
+												<section class="spotlight">
+														<div class="image"><iframe width="640" height="480"
+															src="https://www.youtube.com/embed/qy_oIKf1ByM">
+															</iframe></div>
+														<div class="content">
+														<h2>30 Minute Power Yoga Class</h2>
+														<p style="color:#ffffff">Total Views: 248</p>
+														<p style="color:#ffffff">This is a thirty minute power yoga class. There are options for modifications throughout, so it's okay for people new to yoga (though I wouldn't say it's appropriate for absolute beginners). This is a vinyasa yoga class. Vinyasa means 'movemen't, so we will be constantly flowing and moving </p>
+													</div>
+												</section>
+											</li>
+										</ul>
 							<ul id="crossfitList">
 								<li id="350">
 									<section class="spotlight">
@@ -107,35 +139,6 @@
 											</section>
 										</li>
 									</ul>
-									<ul id="yogaList">
-										<li  id="153">
-												<section class="spotlight">
-													<div class="image"><iframe id="yoga1" width="640" height="480"
-														src="https://www.youtube.com/embed/g13nVd7OLYs">
-														</iframe></div><div class="content" id ="yoga1">
-														<h3>Gentle Yoga Flow - 30-Minute All Levels Yoga Class</h3>
-														<p style="color:#ffffff">Total Views: 153</p>
-														<p style="color:#ffffff">This is an all levels gentle yoga flow to decompress, destress, and FEEL GOOD. 
-			
-																Gentle yoga is a great way to slow down, connect with your body, and calm your mind. This all levels juicy practice is ideal for anyone new to yoga, but everyone will enjoy this opportunity to move your body, breathe deeply and simply feel good. 
-																
-																Move through a series of stretches, yoga poses and guided breathing to increase flexibility and mobility, decompress, and create more physical space in the body. This yoga class is a great way to get familiarized with the poses (and a back-to-the-basics refresher for more experienced students).  </p>
-													</div>
-												</section>
-											</li>
-											<li id="248">
-												<section class="spotlight">
-														<div class="image"><iframe width="640" height="480"
-															src="https://www.youtube.com/embed/qy_oIKf1ByM">
-															</iframe></div>
-														<div class="content">
-														<h2>30 Minute Power Yoga Class</h2>
-														<p style="color:#ffffff">Total Views: 248</p>
-														<p style="color:#ffffff">This is a thirty minute power yoga class. There are options for modifications throughout, so it's okay for people new to yoga (though I wouldn't say it's appropriate for absolute beginners). This is a vinyasa yoga class. Vinyasa means 'movemen't, so we will be constantly flowing and moving </p>
-													</div>
-												</section>
-											</li>
-										</ul>
 								</section>
 					</article>
 
@@ -154,47 +157,30 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-
-				$(document).ready(()=> {
-					$("#crossfitList li").sort(function(a, b) {
-						return parseInt(b.id) - parseInt(a.id);
-						}).each(function() {
-						var elem = $(this);
-						elem.remove();
-						$(elem).appendTo("#crossfitList");
-					});
-					$("#spinList li").sort(function(a, b) {
-						return parseInt(b.id) - parseInt(a.id);
-						}).each(function() {
-						var elem = $(this);
-						elem.remove();
-						$(elem).appendTo("#spinList");
-					});
-					$("#yogaList li").sort(function(a, b) {
-						return parseInt(b.id) - parseInt(a.id);
-						}).each(function() {
-						var elem = $(this);
-						elem.remove();
-						$(elem).appendTo("#yogaList");
-					});
-				})
-				
-				function searchElements(){
-					var input, filter, ul, li, a, i;
-					input = document.getElementById("mySearch");
-					filter = input.value.toUpperCase();
-					ul = document.getElementById("contentList");
-					li = ul.getElementsByTagName("li");
-					for (i = 0; i < li.length; i++) {
-						a = li[i].getElementsByTagName("section")[0];
-						if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-						li[i].style.display = "";
-						} else {
-						li[i].style.display = "";
-						}
-					}
-}
-				
+					$(document).ready(()=> {
+						$("#crossfitList li").sort(function(a, b) {
+							return parseInt(b.id) - parseInt(a.id);
+							}).each(function() {
+							var elem = $(this);
+							elem.remove();
+							$(elem).appendTo("#crossfitList");
+						});
+						$("#spinList li").sort(function(a, b) {
+							return parseInt(b.id) - parseInt(a.id);
+							}).each(function() {
+							var elem = $(this);
+							elem.remove();
+							$(elem).appendTo("#spinList");
+						});
+						$("#yogaList li").sort(function(a, b) {
+							return parseInt(b.id) - parseInt(a.id);
+							}).each(function() {
+							var elem = $(this);
+							elem.remove();
+							$(elem).appendTo("#yogaList");
+						});
+					})
+					
 			</script>
 	</body>
 </html>
